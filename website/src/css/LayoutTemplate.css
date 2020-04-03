@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-width: 100%;
+    position: initial;
+    z-index: 1;
+}
+.textAreaChat{
+   width: 96%;
+   height: 10%;
+   bottom: 0;
+   position: absolute;
+   padding: 0 5px 0 5px;
+
+}
+.Logzinhos{
+    height:50%;
+}
+.FooterDiv{
+    min-width: 100%;
+    max-height: 10vh;
+    background-color: lightseagreen;
+    clear: both;
+    font-size: 20px;
+}
+.HeaderDiv{
+    min-width: 100%;
+    max-height: 10%;
+    background-color: lawngreen;
+}
+.button{
+    margin: 0 10vh 0 10vh;
+    max-width: 10%;
+    max-height: 20%;
+}
+.chatDiv{
+    width:15%;
+    min-width: 15%;
+    max-width: 15%;
+    min-height: 100%;
+    float: left;
+    position: relative;
+    background-color: khaki;
+}
+.loginInput{
+    max-width: 50%;
+    min-width: 10%;
+    max-height: 10%;
+    min-height: 10%;
+}
+.loginInputForm{
+    max-width: 100%;
+    min-width: 100%;
+    max-height:30%;
+    min-height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginButton{
+    min-width: 30%;
+    max-width: 50%;
+    min-height: 10%;
+    max-height: 13%;
+}
+.loginDonthaveAcc{
+    margin-top: 20px;
+    font-size: 11px;
+    min-width: 30%;
+    max-width: 50%;
+    min-height: 10%;
+    max-height: 13%;
+}
+.registerForm{
+    max-width: 100%;
+    min-width: 100%;
+    max-height:30%;
+    min-height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+.registerInput{
+    max-width: 50%;
+    min-width: 10%;
+    max-height: 10%;
+    min-height: 10%;
+}
+.RegisterButton{
+    min-width: 30%;
+    max-width: 50%;
+    min-height: 13%;
+    max-height: 13%;
+}
+.RegisterHaveAccButton{
+    margin-top: 20px;
+    font-size: 11px;
+    min-width: 30%;
+    max-width: 50%;
+    min-height: 10%;
+    max-height: 13%;
+}
