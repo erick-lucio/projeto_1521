@@ -38,6 +38,7 @@ export default class Chat extends React.Component{
                     <textarea className="textAreaChat"></textarea>
                     <FetchChat/>
                     
+                    
                 </div>
             )
         }else{
@@ -101,8 +102,9 @@ export class ChatLogin extends React.Component{
                     if(response.data.data == 1){
                         {this.props.change_state_valueName(response.data.user)}
                         //this.setState({valueName:response.data.user})
-                        //alert("Bem vindo : "+response.data.user);
+                        alert("Bem vindo : "+response.data.user);
                         console.log(this.state);
+                       
                         
 
                     }else{
@@ -123,19 +125,15 @@ export class ChatLogin extends React.Component{
         const {valueName} = this.state;
         
         if(valueName == ''){
-            return(
-                
-                <form className="loginInputForm" onSubmit={this.userGetRegister}>
-                    
-                    
+            return(                
+                <form className="loginInputForm" onSubmit={this.userGetRegister}>                                        
                     Email                    
                     <input
                          defaultValue={this.valueEmail}
                          type="text" 
                          className="loginInput"
                          name="valueEmail"
-                         onChange={this.handleChange} >
-                        
+                         onChange={this.handleChange} >                        
                     </input>
                     Password                    
                     <input 
@@ -152,11 +150,9 @@ export class ChatLogin extends React.Component{
                     </button>
                     <button 
                         className="loginDonthaveAcc"
-                        onClick={this.props.func_change_status_login}
-                        >
+                        onClick={this.props.func_change_status_login}                        >
                         Dont have Accout?
-                    </button>
-                    
+                    </button>                    
                 </form>
             
         )
@@ -225,8 +221,8 @@ export class ChatRegister extends React.Component{
                     type="text" 
                     onChange={this.handleChange} 
                     className="registerInput" 
-                    name="valueName" 
-                >
+                    name="valueName"              
+                       >
                </input>
                Password
                <input 

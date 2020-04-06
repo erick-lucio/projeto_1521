@@ -12,35 +12,62 @@ export default class FetchChat extends React.Component{
         }
         
     }
-    returnLast_50_chats = e =>{
-        axios
-        .get('http://localhost:3100/sr50chats/')
-        .then(response =>{
-            
-            this.setState({chatLog:response});
-            //console.log(response);
-           // console.log(response.data[0].date_time)
-          //  console.log(response.data[0].name_user)
-            //console.log(response.data[0].messages)
-            //console.log(this.state.chatLog.data[0].name_user)
-        })
-        .catch(error =>{
-            console.log(error)
-        })
-    }
-    render(){
+     returnLast_50_chats(){
+
         setInterval(() => {
-            this.returnLast_50_chats();
-        }, 5000);
-        const {chatLog} = this.state;
-        return(
-            <div className="Logzinhos">
-              {chatLog.data.forEach(element => {
-                  //ARRUMAR O ARRAY
-                  console.log(element.name_user);
-              })} 
+
+            axios
+            .get('http://localhost:3100/sr50chats/')
+            .then(response =>{
                 
+                this.setState({chatLog:response});
+    
+            })
+            .catch(error =>{
+                console.log(error)
+            })
+
+        }, 5000);
+
+
+        
+    }
+    getStatechat(){
+
+        return this.state.chatLog.data;
+    };
+    render(){
+
+        
+        
+        
+                      
+                  //ARRUMAR O ARRAY
+
+        
+        return(
+            <div className="Logzinhos" id="log_id">
+
+           
             </div>
         )
     }
 }
+
+//posts.map((post, index)=>
+//  <div key={index}>
+//      <h3>{post.title}</h3>
+//      <p>{post.body}</p>
+//    </div>
+//);
+//              {this.state.data.map((data,index)=>
+//<div>
+//{data.name_user}
+//</div>
+//
+//)}
+//
+//
+//
+//
+//

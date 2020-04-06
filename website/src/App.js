@@ -13,7 +13,7 @@ export default class App extends React.Component{
       <div >
         <Header />
         <Routes/>
-        <Chat ref="chat"/>     
+        <Chat/>     
         <Footer /> 
         
       </div>
