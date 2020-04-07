@@ -12,6 +12,7 @@ export default class Chat extends React.Component{
             valuePassword:'',
             login_create:'login'
         }
+        this.handle_key= this.handleKeyDown.bind(this);
     }
     change_login_status(string){
         this.setState({login_create:string});
@@ -27,6 +28,41 @@ export default class Chat extends React.Component{
     change_state_valueName(name){
         this.setState({valueName:name});
     };
+    handleKeyDown(e) {
+        
+
+        if (e.key === 'Enter' && this.state.valueName != "") {
+            let req ={
+                message:document.getElementById('chat_tip').value,
+                name:this.state.valueName,
+            }
+            //console.log(req)    
+            document.getElementById('chat_tip').value="";
+
+            axios
+            .post('http://localhost:3100/inschat/',req)
+            .then(response =>{
+                
+                if(response.data.data == 1){
+                
+                 
+                    
+                  
+                //console.log();
+                }else{
+                    //console.log("deu ruim la");
+                }
+            })
+              .catch(error =>{
+               // console.log(error)
+            })
+
+
+
+
+
+        }
+      }
     render(){
         const {login_create,valueName} = this.state;
 
@@ -35,7 +71,7 @@ export default class Chat extends React.Component{
                 <div className="chatDiv">
                     <ChatLogin func_change_status_login={this.change_login_status.bind(this,'register')} 
                     change_state_valueName={this.change_state_valueName.bind(this)}/>
-                    <textarea className="textAreaChat"></textarea>
+                    
                     <FetchChat/>
                     
                     
@@ -46,14 +82,14 @@ export default class Chat extends React.Component{
                 return(
                     <div className="chatDiv">
                         <ChatRegister func_change_status_register={this.change_login_status.bind(this,'login')}/>
-                        <textarea className="textAreaChat"></textarea>
+                        
                         <FetchChat/>
                     </div>
                 )
             }else{
                 return(
                     <div className="chatDiv">
-                        <textarea className="textAreaChat">Area para digitar</textarea>
+                        <textarea id="chat_tip" placeholder="Digita ai menor" className="textAreaChat" onKeyDown={this.handle_key}></textarea>
                         <FetchChat/>
                     </div>
                 )
@@ -103,16 +139,16 @@ export class ChatLogin extends React.Component{
                         {this.props.change_state_valueName(response.data.user)}
                         //this.setState({valueName:response.data.user})
                         alert("Bem vindo : "+response.data.user);
-                        console.log(this.state);
+                       // console.log(this.state);
                        
                         
 
                     }else{
-                        alert(response.data.user);
+                       // alert(response.data.user);
                     }
                 })
                 .catch(error =>{
-                    console.log(error)
+                   // console.log(error)
                 })
         }else{
             alert('Preencha todos os campos');
