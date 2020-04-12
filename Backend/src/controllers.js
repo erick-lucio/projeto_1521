@@ -87,10 +87,10 @@ const searchUser = router.post('/sruser/',(req,res)=>{
     })
 });
 
-const searchLast50Chatlogs = router.get('/sr50chats',(req,res)=>{
+const searchLast50Chatlogs = router.get('/sr100chats',(req,res)=>{
     
     
-    let queryString ='select a.messages,b.name_user,date_format(a.time_msg,"%d/%m/%Y-%H:%i")as date_time from chat as a join users as b on a.user_id=b.user_id order by time_msg desc limit 50';
+    let queryString ='select a.messages,b.name_user,date_format(a.time_msg,"%d/%m/%Y-%H:%i")as date_time from chat as a join users as b on a.user_id=b.user_id order by time_msg desc limit 100';
 
     connection.query(queryString,(err,rows,fields)=>{
         if(!err){

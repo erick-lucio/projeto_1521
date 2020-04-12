@@ -1,0 +1,45 @@
+.Logzinhos{
+    min-height:50%;
+    max-height:90%;
+    overflow:scroll;
+    overflow-x:hidden;
+    display: flex;
+    flex-direction: column; 
+    background-color: rgba(6, 179, 248, 0.205);
+    
+}
+.each_chat_div{
+    width: 100%;
+    height: auto;
+    border-style: solid;
+    position: initial;
+    margin: 1% 0 1% 0;
+    border-width: 0.3vw;
+    border-radius: 1.5vw;
+    border-color: rgba(40, 221, 94, 0.521);
+}
+.each_name_chat_div{
+    width: 70%;
+    height: 33%;
+    text-align: right;
+    color: rgba(202, 9, 9, 0.747);
+
+    font-size: 1.2vw;
+    padding-right: 5%;
+    border-radius: 100%;
+}
+.each_message_chat_div{
+    width: 100%;
+    height: 33%;
+    text-overflow: initial;
+    word-wrap: break-word;
+    padding: 2% 3% 4% 3%;
+    border-radius: 100%;
+    
+}
+.each_date_chat_div{
+    width: 30%;
+    height: 33%;
+
+    
+}

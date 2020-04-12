@@ -1,3 +1,4 @@
+create database server_node_erick_mysql
 use  server_node_erick_mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678'
 flush privileges
@@ -5,6 +6,14 @@ SET FOREIGN_KEY_CHECKS=0;
 select * from users 
 alter table users add email varchar(30)
 alter table chat add time_msg datetime
+create table users(
+user_id int auto_increment primary key not null,
+password_user varchar(80) not null,
+name_user varchar(100)not null,
+email varchar(50)not null
+
+
+)
 create table chat (
 id int auto_increment primary key not null,
 messages varchar(255) not null,

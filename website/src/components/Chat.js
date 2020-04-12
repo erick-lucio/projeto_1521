@@ -3,6 +3,9 @@ import { render } from '@testing-library/react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import FetchChat from './FetchChat';
+import '../css/LayoutTemplate.css';
+import '../css/chat.css';
+
 export default class Chat extends React.Component{
     constructor(props){
         super(props);
@@ -12,6 +15,7 @@ export default class Chat extends React.Component{
             valuePassword:'',
             login_create:'login'
         }
+        this.callLogoffFunc = this.logOffFunction.bind(this);
         this.handle_key= this.handleKeyDown.bind(this);
     }
     change_login_status(string){
@@ -20,6 +24,14 @@ export default class Chat extends React.Component{
     change_state_name(){
 
 
+    };
+    logOffFunction(){
+            this.setState({    
+                valueName:'',
+                valueEmail:'',
+                valuePassword:'',
+                login_create:'login'
+            })
     };
     return_states(){
 
@@ -31,7 +43,9 @@ export default class Chat extends React.Component{
     handleKeyDown(e) {
         
 
-        if (e.key === 'Enter' && this.state.valueName != "") {
+        if (e.key === 'Enter' && this.state.valueName != "" 
+        && document.getElementById('chat_tip').value.length >=1
+        ) {
             let req ={
                 message:document.getElementById('chat_tip').value,
                 name:this.state.valueName,
@@ -68,7 +82,7 @@ export default class Chat extends React.Component{
 
         if(login_create == 'login' && valueName == ''){
             return(
-                <div className="chatDiv">
+                <div className="chatDiv" id="chatDivId">
                     <ChatLogin func_change_status_login={this.change_login_status.bind(this,'register')} 
                     change_state_valueName={this.change_state_valueName.bind(this)}/>
                     
@@ -80,7 +94,7 @@ export default class Chat extends React.Component{
         }else{
             if(login_create == 'register' && valueName == ''){
                 return(
-                    <div className="chatDiv">
+                    <div className="chatDiv" id="chatDivId">
                         <ChatRegister func_change_status_register={this.change_login_status.bind(this,'login')}/>
                         
                         <FetchChat/>
@@ -88,8 +102,9 @@ export default class Chat extends React.Component{
                 )
             }else{
                 return(
-                    <div className="chatDiv">
-                        <textarea id="chat_tip" placeholder="Digita ai menor" className="textAreaChat" onKeyDown={this.handle_key}></textarea>
+                    <div className="chatDiv" id="chatDivId">
+                        <button className="loggof_chat_button" onClick={this.callLogoffFunc}>Logoff</button> 
+                        <input  type="text" id="chat_tip" placeholder="Digita ai menor" className="textAreaChat" onKeyDown={this.handle_key}></input>
                         <FetchChat/>
                     </div>
                 )
@@ -162,7 +177,7 @@ export class ChatLogin extends React.Component{
         
         if(valueName == ''){
             return(                
-                <form className="loginInputForm" onSubmit={this.userGetRegister}>                                        
+                <form className="loginInputForm" id="loginIdForm" onSubmit={this.userGetRegister}>                                        
                     Email                    
                     <input
                          defaultValue={this.valueEmail}
@@ -221,7 +236,7 @@ export class ChatRegister extends React.Component{
         & this.state.valuePassword !='')
         {
             console.log(this.state);
-            //console.log('http://127.0.0.1:3100/cruser/',this.state);
+            
             axios
                 .post('http://localhost:3100/cruser/',this.state)
                 .then(response =>{
@@ -246,11 +261,11 @@ export class ChatRegister extends React.Component{
           
   
 
-
+    
     render(){
         const {valueName,valuePassword,valueEmail} = this.state;
         return(
-           <form className="registerForm" onSubmit={this.userRegister}>
+           <form className="registerForm" id="idRegisterForm" onSubmit={this.userRegister}>
                Name
                <input  
                     defaultValue={valueName} 

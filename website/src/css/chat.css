@@ -1,0 +1,139 @@
+.chatDiv{
+    width:20%;
+    min-width: 20%;
+    max-width: 20%;
+    min-height: 100%;
+    float: left;
+    position: relative;
+    background-color: rgba(6, 180, 248, 0.199);
+    display: none;
+    visibility: hidden;
+    flex-direction: column; 
+}
+.textAreaChat{
+    width: 96%;
+    min-height: 5%;
+    max-height: 5%;
+    bottom: 0;   
+    padding: 0 5px 0 5px;
+    display: flex;
+    flex-direction: column; 
+    border-color: aqua;
+    border-style: ridge; 
+ }
+ 
+ 
+ 
+ 
+ 
+ .loginInput{
+     max-width: 70%;
+     min-width: 25%;
+     max-height: 13%;
+     min-height: 13%;
+    
+ }
+ .loginInputForm{
+     max-width: 100%;
+     min-width: 100%;
+     max-height:30%;
+     min-height: 20%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background-color: rgba(6, 179, 248, 0.205);
+ }
+ .loginButton{
+     min-width: 30%;
+     max-width: 50%;
+     min-height: 10%;
+     max-height: 13%;
+     margin: 5% 0 0 0;
+     transition-duration: 0.4s;
+     border-radius: 20%;
+ }
+ .loginButton:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+ }
+ .loginDonthaveAcc{
+     margin-top: 20px;
+     margin-bottom: 5%;
+     font-size: 11px;
+     min-width: 30%;
+     max-width: 50%;
+     min-height: 10%;
+     max-height: 13%;
+     transition-duration: 0.4s;
+     border-radius: 20%;
+ }
+ .loginDonthaveAcc:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+ }
+ .registerForm{
+    max-width: 100%;
+    min-width: 100%;
+    max-height:30%;
+    min-height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(6, 179, 248, 0.205);
+ }
+ .registerInput{
+    max-width: 70%;
+    min-width: 25%;
+    max-height: 13%;
+    min-height: 13%;
+ }
+
+ .RegisterHaveAccButton{
+     margin-top: 5%;
+     font-size: 11px;
+     min-width: 30%;
+     max-width: 50%;
+     min-height: 10%;
+     max-height: 13%;
+     transition-duration: 0.4s;
+     border-radius: 20%;
+ }
+ .RegisterHaveAccButton:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+ }
+ .button{
+    margin: 0 10vh 0 10vh;
+    max-width: 20%;
+    max-height: 10%;
+    
+}
+.RegisterButton{
+    min-width: 30%;
+    max-width: 50%;
+    min-height: 13%;
+    max-height: 13%;
+    transition-duration: 0.4s;
+    border-radius: 20%;
+}
+.RegisterButton:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+ }
+ .formsCharacters{
+    text-align: center;
+    width:100%;
+    height: 10%;
+    background-color: transparent;
+ }
+.loggof_chat_button{
+    transition-duration: 0.4s;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 4%;
+    max-height: 5%;
+}
+.loggof_chat_button:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+}

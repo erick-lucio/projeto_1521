@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
+import '../css/LayoutTemplate.css';
+import '../css/fetchChat.css';
 
 export default class FetchChat extends React.Component{
     constructor(props){
@@ -34,7 +36,7 @@ export default class FetchChat extends React.Component{
         setInterval(() => {
 
             axios
-            .get('http://localhost:3100/sr50chats/')
+            .get('http://localhost:3100/sr100chats/')
             .then(response =>{
                 
                 this.setState({chatLog:response});
@@ -55,13 +57,10 @@ export default class FetchChat extends React.Component{
             this.data_array.forEach(element => {
                 string_return+="<div class='each_chat_div'> "+
                 "<div class='each_name_chat_div'>"+
-                element.name_user+
-                "</div>"+                
+                element.name_user+//"  "+element.date_time+
+                "</div>"+         
                 "<div class='each_message_chat_div'>"+
                 element.messages+
-                "</div>"+ 
-                "<div class='each_date_chat_div'>"+
-                element.date_time+
                 "</div>"+ 
                 "</div>";
 
