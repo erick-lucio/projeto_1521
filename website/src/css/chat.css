@@ -20,6 +20,7 @@
     flex-direction: column; 
     border-color: aqua;
     border-style: ridge; 
+    font-size: 1vw;
  }
  
  
@@ -41,6 +42,7 @@
      display: flex;
      flex-direction: column;
      align-items: center;
+     font-size: 1vw;
      background-color: rgba(6, 179, 248, 0.205);
  }
  .loginButton{
@@ -59,7 +61,7 @@
  .loginDonthaveAcc{
      margin-top: 20px;
      margin-bottom: 5%;
-     font-size: 11px;
+     font-size: 1vw;
      min-width: 30%;
      max-width: 50%;
      min-height: 10%;
@@ -79,6 +81,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1vw;
     background-color: rgba(6, 179, 248, 0.205);
  }
  .registerInput{
@@ -97,6 +100,7 @@
      max-height: 13%;
      transition-duration: 0.4s;
      border-radius: 20%;
+     font-size: 1vw;
  }
  .RegisterHaveAccButton:hover{
     background-color: #4CAF50; /* Green */
@@ -132,8 +136,10 @@
     max-width: 100%;
     min-height: 4%;
     max-height: 5%;
+    font-size: 1vw;
 }
 .loggof_chat_button:hover{
     background-color: #4CAF50; /* Green */
     color: white;
+    
 }
