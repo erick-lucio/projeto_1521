@@ -5,7 +5,7 @@
     overflow-x:hidden;
     display: flex;
     flex-direction: column; 
-    background-color: rgba(6, 179, 248, 0.205);
+    background-color: rgba(80, 80, 80, 1);
     
 }
 .each_chat_div{
@@ -16,13 +16,14 @@
     margin: 1% 0 1% 0;
     border-width: 0.3vw;
     border-radius: 1.5vw;
-    border-color: rgba(40, 221, 94, 0.521);
+    border-color: rgba(56, 54, 54, 0.322);
+    background-color: rgba(240, 232, 232, 0.938);
 }
 .each_name_chat_div{
-    width: 70%;
+    
     height: 33%;
     text-align: right;
-    color: rgba(202, 9, 9, 0.747);
+    color: rgba(92, 69, 69, 0.747);
     font-size: 0.9vw;
     
     padding-right: 5%;

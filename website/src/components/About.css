@@ -1,0 +1,58 @@
+.about{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(80, 80, 80, 0.315);
+    float: right;
+    position: relative;
+    display: flex;
+   
+    
+    display: flex;
+    
+
+}
+.myImage1{
+    height: 100%;
+    width: 70%;
+    position: relative;
+    bottom: 0;
+    opacity: 90%;
+    
+    
+}
+@media screen and (max-width:900px){
+    .firstText{
+        font-size: 0.65em;
+    }
+}
+.personal_info{
+    height: 52.5vh;
+    position: relative;
+    
+    
+    width: 100%;
+    align-items: center;
+    margin-top: 0; 
+    text-align: center;
+ 
+    background-color: rgba(139, 133, 133, 0.712);
+}
+.firstText{
+    vertical-align: middle;
+    width: 80%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    text-align: left;
+    margin-top: 10%;
+
+}
+.about_left_div{
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+.about_right_div{
+    float: right;
+    width: 60%;
+    height: 100%;
+}

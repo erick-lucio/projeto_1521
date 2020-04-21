@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Page404.css'
+import './Page404.css'
 
 export default class PageNotFound extends React.Component{
     constructor(props) {

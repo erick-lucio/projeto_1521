@@ -1,0 +1,80 @@
+.main{
+
+    
+    min-height: 100vh;
+    background-color: rgba(80, 80, 80, 0.315);
+    float: right;
+    position: relative;
+    display: grid;
+    
+}
+.main_component_left_img{
+    padding: 5% 2% 2% 3%;
+    clear: both;
+    min-width: 100%;
+    width:auto;
+    max-height: 100%;
+    
+    max-height: auto;
+    min-height: auto;
+    background-color:inherit;
+    padding-left: 5vw;
+}
+.img_left_float{
+    float: left;
+   
+    width:35vw;
+    height: 35vh;
+     
+    background-color:rgba(228, 217, 217,1);
+    border-style: double;
+    border-color: rgba(80, 80, 80, 0.315);
+    border-width: 1vw;
+}
+.text_right_side{
+    
+   
+    background-color:none;
+}
+.main_component_right_img{
+    padding: 5% 4% 2% 3%;
+    clear: both;
+    min-width: 100%;
+    width:auto;
+    max-height: 100%;
+    
+    max-height: auto;
+    min-height: auto;
+    background-color:inherit;
+    padding-left: 5vw;
+}
+.img_right_float{
+    float: right;
+    width:35vw;
+    height: 35vh;
+     
+    background-color:rgba(228, 217, 217,1);
+    border-style: double;
+    border-color: rgba(80, 80, 80, 0.315);
+    border-width: 1vw;
+}
+.text_left_side{
+  
+   
+    background-color:none;
+    
+}
+.clear_both_div{
+    max-width: 0%;
+    max-height: 0%;
+    clear: both;
+    background-color:inherit;
+}
+.main_explanation_text{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    background-color: rgba(80, 80, 80, 0.315);;
+    padding-bottom: 0vh;
+    margin-bottom: 0;
+    padding-top: 4vh;
+}

@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-import '../css/LayoutTemplate.css';
-import '../css/fetchChat.css';
+import './LayoutTemplate.css';
+import './FetchChat.css';
 
 export default class FetchChat extends React.Component{
     constructor(props){
@@ -36,7 +36,7 @@ export default class FetchChat extends React.Component{
         setInterval(() => {
 
             axios
-            .get('http://localhost:3100/sr100chats/')
+            .get('http://192.168.1.2:3100/sr100chats/')
             .then(response =>{
                 
                 this.setState({chatLog:response});

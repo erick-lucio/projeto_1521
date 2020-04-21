@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import FetchChat from './FetchChat';
-import '../css/LayoutTemplate.css';
-import '../css/chat.css';
+import './LayoutTemplate.css';
+import './Chat.css';
 
 export default class Chat extends React.Component{
     constructor(props){
@@ -17,14 +17,23 @@ export default class Chat extends React.Component{
         }
         this.callLogoffFunc = this.logOffFunction.bind(this);
         this.handle_key= this.handleKeyDown.bind(this);
+        this.closeChat = this.closeChatFunction.bind(this);
     }
     change_login_status(string){
         this.setState({login_create:string});
     };
     change_state_name(){
-
+    
 
     };
+    closeChatFunction(){
+      
+
+            
+      
+
+        
+    }; 
     logOffFunction(){
             this.setState({    
                 valueName:'',
@@ -79,10 +88,15 @@ export default class Chat extends React.Component{
       }
     render(){
         const {login_create,valueName} = this.state;
-
+        const style1={
+            visibility:"hidden",
+            display:"none"
+          }
+          
         if(login_create == 'login' && valueName == ''){
             return(
-                <div className="chatDiv" id="chatDivId">
+                <div className="chatDiv" id="chatDivId" style={style1}>
+                   
                     <ChatLogin func_change_status_login={this.change_login_status.bind(this,'register')} 
                     change_state_valueName={this.change_state_valueName.bind(this)}/>
                     
@@ -94,7 +108,8 @@ export default class Chat extends React.Component{
         }else{
             if(login_create == 'register' && valueName == ''){
                 return(
-                    <div className="chatDiv" id="chatDivId">
+                    <div className="chatDiv" id="chatDivId" style={style1}>
+
                         <ChatRegister func_change_status_register={this.change_login_status.bind(this,'login')}/>
                         
                         <FetchChat/>
@@ -102,8 +117,8 @@ export default class Chat extends React.Component{
                 )
             }else{
                 return(
-                    <div className="chatDiv" id="chatDivId">
-                        <button className="loggof_chat_button" onClick={this.callLogoffFunc}>Logoff</button> 
+                    <div className="chatDiv" id="chatDivId" style={style1}>
+                        
                         <input  type="text" id="chat_tip" placeholder="Digita ai menor" className="textAreaChat" onKeyDown={this.handle_key}></input>
                         <FetchChat/>
                     </div>

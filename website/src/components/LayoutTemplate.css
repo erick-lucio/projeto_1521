@@ -1,0 +1,33 @@
+#root {
+  
+    padding-left: 0;
+    padding-right: 0;
+}
+.toogleChat{
+    width: 3vw;
+    height: 4vh;
+    background-color: transparent;
+    
+    bottom: 85vh;
+    z-index: 2;
+}
+.div_dinamic{
+    background-color: transparent;
+    position: fixed;
+    
+    z-index: 2;
+    
+    margin-top: 11vh;
+}
+.dinamic_buttons{
+    z-index: 2;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    
+
+}
+@media (max-width:600px){
+    
+}   
+    
