@@ -159,22 +159,30 @@ export class ChatLogin extends React.Component{
         if(this.state.valueEmail != '' 
         & this.state.valuePassword !='')
         {
-            //console.log(this.state);
+            console.log(this.state);
             //console.log('http://127.0.0.1:3100/cruser/',this.state);
-            axios
-                .post('http://localhost:3100/sruser/',this.state)
+            axios({
+                method: 'get',
+                url: 'http://localhost:3100/sruser/'+this.state.valuePassword+'/'+this.state.valueEmail,
+                
+                headers: {
+                    'accept': '*/*',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+                })
                 .then(response =>{
                     
-                    if(response.data.data == 1){
-                        {this.props.change_state_valueName(response.data.user)}
+                    if(response.data.data != 'false'){
+                        {this.props.change_state_valueName(response.data)}
                         //this.setState({valueName:response.data.user})
-                        alert("Bem vindo : "+response.data.user);
+                        alert("Bem vindo : "+response.data);
+                        
                        // console.log(this.state);
                        
                         
 
                     }else{
-                       // alert(response.data.user);
+                        alert('User not found');
                     }
                 })
                 .catch(error =>{
@@ -252,14 +260,24 @@ export class ChatRegister extends React.Component{
         {
             console.log(this.state);
             
-            axios
-                .post('http://localhost:3100/cruser/',this.state)
+            axios({
+                method: 'post',
+                url: 'http://localhost:3100/cruser/',
+                data: this.state,
+                headers: {'accept': '*/*',
+                'Content-Type': 'application/json'
+            } 
+                })
+                
                 .then(response =>{
-                    if(response.data == 1){
+                    
+                    if(response.data == 'true'){
                         alert("Usuario Criado com Sucesso!");
                     }else{
                         alert("Usuario Ja Existe!");
                     }
+                    
+                   console.log(response)
                 })
                 .catch(error =>{
                     //console.log(error)

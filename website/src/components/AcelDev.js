@@ -19,8 +19,8 @@ export default class AcelDev extends React.Component{
     }
     getJson(){
         axios
-        .get('https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=a4d944dd47ea6faba16e39103cd132be80a5a939')
-          
+        .get('https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=a4d944dd47ea6faba16e39103cd132be80a5a939',)
+        
         .then(response =>{
             this.setState({data:response})
             
@@ -91,7 +91,7 @@ export default class AcelDev extends React.Component{
         decoded.set('x',alp.charAt(alp.search('x')-key<0 ? 26+(alp.search('x')-key): alp.search('x')-key))
         decoded.set('y',alp.charAt(alp.search('y')-key<0 ? 26+(alp.search('y')-key): alp.search('y')-key))
         decoded.set('z',alp.charAt(alp.search('z')-key<0 ? 26+(alp.search('z')-key): alp.search('z')-key))
-        //console.log(decoded)
+        
         for(let i =0;i<string.length;i++){
             string_final+=decoded.has(string.charAt(i))?decoded.get(string.charAt(i)):string.charAt(i);
             //string = string.replace(string.charAt(i),decoded.has(string.charAt(i))?decoded.get(string.charAt(i)):string.charAt(i))

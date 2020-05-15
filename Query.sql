@@ -4,13 +4,15 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678
 flush privileges
 SET FOREIGN_KEY_CHECKS=0;
 select * from users 
-alter table users add email varchar(30)
-alter table chat add time_msg datetime
+select * from chat 
+delete from chat where messages = ""
+
 create table users(
 user_id int auto_increment primary key not null,
 password_user varchar(80) not null,
 name_user varchar(100)not null,
-email varchar(50)not null
+email varchar(50)not null,
+permissionLvl int not null
 
 
 )
@@ -18,7 +20,10 @@ create table chat (
 id int auto_increment primary key not null,
 messages varchar(255) not null,
 user_id int not null,
-foreign key (user_id) REFERENCES users(user_id)
+foreign key (user_id) REFERENCES users(user_id),
+time_msg datetime,
+dest int,
+remetente int
 )
 
 select now()
