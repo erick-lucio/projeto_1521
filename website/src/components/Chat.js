@@ -65,7 +65,7 @@ export default class Chat extends React.Component{
             axios
             .post('http://localhost:3100/inschat/',req)
             .then(response =>{
-                
+                console.log(response)
                 if(response.data.data == 1){
                 
                  

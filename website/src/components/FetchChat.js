@@ -38,7 +38,7 @@ export default class FetchChat extends React.Component{
             axios
             .get('http://192.168.1.2:3100/sr100chats/')
             .then(response =>{
-                
+               // console.log(response.data[0].user.name_user)
                 this.setState({chatLog:response});
                 
     
@@ -56,14 +56,14 @@ export default class FetchChat extends React.Component{
         if(this.data_array){
             this.data_array.forEach(element => {
                 string_return+="<div class='each_chat_div'> "+
-                "<div class='each_name_chat_div'>"+
-                element.name_user+//"  "+element.date_time+
+                "<div class='each_name_chat_div'>"+                
+                element.user.name_user+//"  "+element.date_time+
                 "</div>"+         
                 "<div class='each_message_chat_div'>"+
                 element.messages+
                 "</div>"+ 
                 "</div>";
-
+                
 
 
                 

@@ -1,11 +1,18 @@
 create database server_node_erick_mysql
 use  server_node_erick_mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678'
+
+PRIMARYdrop table users
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 flush privileges
 SET FOREIGN_KEY_CHECKS=0;
-select * from users 
 select * from chat 
+delete from users
+
+select * from chat nameuser_idaddressesid
 delete from chat where messages = ""
+select now()users
+insert into users(name_user,password_user,email,permissionLvl
+)values('erick','12345','ericklucio',1)
 
 create table users(
 user_id int auto_increment primary key not null,
@@ -16,7 +23,7 @@ permissionLvl int not null
 
 
 )
-create table chat (
+create table chat ( 
 id int auto_increment primary key not null,
 messages varchar(255) not null,
 user_id int not null,

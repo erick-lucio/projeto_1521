@@ -43,7 +43,6 @@ MariadbDialect.prototype.supports = _.merge(
       check: false
     },
     indexViaAlter: true,
-    indexHints: true,
     NUMERIC: true,
     GEOMETRY: true,
     JSON: true,

@@ -11,7 +11,6 @@ AbstractDialect.prototype.supports = {
   'ORDER NULLS': false,
   'UNION': true,
   'UNION ALL': true,
-  'RIGHT JOIN': true,
 
   /* does the dialect support returning values for inserted/updated fields */
   returnValues: false,
